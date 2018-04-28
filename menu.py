@@ -9,8 +9,9 @@ import time
 
 def speedx(sound_array, factor):
     """ Speeds up / slows down a sound, by some factor. """
+    """o factor multiplica todos os pontos da amostra por um multiplo da frequencia desejada relativa a um semitom """ 
     index = np.round(np.arange(0, len(sound_array), factor))
-    index = index[index < len(sound_array)].astype(int)
+    index = index[index < len(sound_array)].astype(int)#aqui truncamos o vetor para até valores abaixo de len(sound_array), pois os valorse acima nao são desejados
     return sound_array[index]
 
 
